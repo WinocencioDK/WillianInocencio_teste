@@ -53,8 +53,8 @@
                           <label for="sxMot">Sexo</label>
                             <select class="form-control" id="sxMot" name="CsxMot" required>
                               <option value="">Escolha...</option>
-                              <option value="M">Masculino</option>
-                              <option value="F">Feminino</option>
+                              <option value="Masculino">Masculino</option>
+                              <option value="Feminino">Feminino</option>
                             </select>
                           <div class="invalid-feedback">
                             Selecione o seu sexo.

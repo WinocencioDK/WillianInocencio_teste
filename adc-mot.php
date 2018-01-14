@@ -1,11 +1,12 @@
 <?php
+include("conecta.php");
+include("banco-corrida.php");
 
 $nomeMot = $_POST['CnmComMot'];
 $NascMot = $_POST['CdaNscMot'];
-echo $NascMot;
-$cpfMot = $_POST['CcpfMot'];
 $sxMot = $_POST['CsxMot'];
+$cpfMot = $_POST['CcpfMot'];
 $modCar = $_POST['CmodCar'];
-if(isset($POST['CisAtivo'])) { $isAtivo = "true";}else{$isAtivo = "false";}
+if(isset($_POST['CisAtivo'])) { $isAtivo = true ; } else{ $isAtivo = false;}
 
-//insereMotorista($conexao,$nomeMot,$NascMot,$cpfMot,$sxMot,$modCar,$isAtivo);
+insereMotorista($conexao,$nomeMot,$NascMot,$sxMot,$cpfMot,$modCar,$isAtivo);
