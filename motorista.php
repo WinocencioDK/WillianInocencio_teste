@@ -18,7 +18,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                    <form id="needs-validation" action="adc-mot.php" onsubmit="return TestaCPF();" method="post" novalidate>
+                    <form id="needs-validation" onsubmit="return TestaCPF();" action="adc-mot.php" method="post"  novalidate>
 
                       <div class="form-row">
                         <div class="col-md-7 mb-6">
@@ -43,7 +43,7 @@
                       <div class="form-row">
                         <div class="col-md-7 mb-3">
                           <label for="cpfMot">CPF</label>
-                          <input type="number" maxlength="9" class="form-control" id="cpfMot" name="CcpfMot" placeholder="CPF válido" required>
+                          <input type="number" maxlength="9" class="form-control" onkeyup="return TestaCPF();" id="cpfMot" name="CcpfMot" placeholder="CPF válido" required>
                           <div class="invalid-feedback">
                             Coloque um CPF valido.
                           </div>

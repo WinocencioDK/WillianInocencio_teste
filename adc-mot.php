@@ -10,3 +10,6 @@ $modCar = $_POST['CmodCar'];
 if(isset($_POST['CisAtivo'])) { $isAtivo = true ; } else{ $isAtivo = false;}
 
 insereMotorista($conexao,$nomeMot,$NascMot,$sxMot,$cpfMot,$modCar,$isAtivo);
+
+header("Location: motorista.php?adc=true");
+die();
