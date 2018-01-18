@@ -21,9 +21,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-              <a class="nav-link" href="index.php">Pagina Inicial
-                
-              </a>
+            <a class="nav-link" href="index.php">Pagina Inicial                
+            </a>
             <li class="nav-item">
               <a class="nav-link" href="motorista.php">Motoristas</a>
             </li>

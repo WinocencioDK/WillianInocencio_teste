@@ -1,6 +1,6 @@
 <?php include("_copy/cabecalho.php");
-      include("conecta.php");
-      include("banco-corrida.php");
+      include("banco/conecta.php");
+      include("banco/banco-corrida.php");
  ?>
 
     <div class="container">
@@ -27,7 +27,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                    <form id="needs-validation" onsubmit="return TestaCPF();" action="adc-pas.php" method="post"  novalidate>
+                    <form id="needs-validation" onsubmit="return TestaCPF();" action="AdceAlt/adc-pas.php" method="post"  novalidate>
 
                       <div class="form-row">
                         <div class="col-md-7 mb-6">
@@ -52,7 +52,7 @@
                       <div class="form-row">
                         <div class="col-md-7 mb-3">
                           <label for="cpfMot">CPF</label>
-                          <input type="text" maxlength="11" class="form-control" value="0" onkeyup="return TestaCPF();" id="cpfMot" name="CcpfPas" placeholder="CPF válido" required>
+                          <input type="text" maxlength="11" class="form-control"  onkeyup="return TestaCPF();" id="cpfMot" name="CcpfPas" placeholder="CPF válido" required>
                           <div id="Some" class="invalid-feedback">
                             Coloque um CPF valido.
                           </div>

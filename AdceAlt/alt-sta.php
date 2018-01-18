@@ -1,6 +1,6 @@
 <?php
-include("conecta.php");
-include("banco-corrida.php");
+include("../banco/conecta.php");
+include("../banco/banco-corrida.php");
 
 $id = $_POST['Cact1'];
 if($_POST['Cact2'] == true) {
@@ -14,5 +14,5 @@ if($_POST['Cact2'] == true) {
 
 alteraStatus($conexao,$id,$status);
 
-header("Location: motorista.php?trc=true");
+header("Location: ../motorista.php");
 die();

@@ -1,6 +1,6 @@
 <?php
-include("conecta.php");
-include("banco-corrida.php");
+include("../banco/conecta.php");
+include("../banco/banco-corrida.php");
 
 $nomeMot = $_POST['CnmComMot'];
 $NascMot = $_POST['CdaNscMot'];
@@ -15,5 +15,5 @@ if(isset($_POST['CisAtivo'])) {
 
 insereMotorista($conexao,$nomeMot,$NascMot,$sxMot,$cpfMot,$modCar,$isAtivo);
 
-header("Location: motorista.php?adc=true");
+header("Location: ../motorista.php?adc=true");
 die();

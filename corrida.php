@@ -1,6 +1,6 @@
 <?php include("_copy/cabecalho.php");
-      include("conecta.php");
-      include("banco-corrida.php"); ?>
+      include("banco/conecta.php");
+      include("banco/banco-corrida.php"); ?>
 
     <div class="container">
       <div class="principal">
@@ -26,7 +26,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form id="needs-validation"  action="adc-corr.php" method="post"  novalidate>
+                <form id="needs-validation"  action="AdceAlt/adc-corr.php" method="post"  novalidate>
 
                   <div class="form-row">
                     <div class="col-md-6">

@@ -1,6 +1,6 @@
 <?php include("_copy/cabecalho.php");
-      include("conecta.php");
-      include("banco-corrida.php");
+      include("banco/conecta.php");
+      include("banco/banco-corrida.php");
  ?>
 
     <div class="container">
@@ -26,7 +26,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                    <form id="needs-validation" onsubmit="return TestaCPF();" action="adc-mot.php" method="post"  novalidate>
+                    <form id="needs-validation" onsubmit="return TestaCPF();" action="AdceAlt/adc-mot.php" method="post"  novalidate>
 
                       <div class="form-row">
                         <div class="col-md-7 mb-6">
@@ -170,7 +170,7 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <form action="alt-sta.php" method="post">
+                <form action="AdceAlt/alt-sta.php" method="post">
                 <input type="hidden" value="" id="act1" name="Cact1"/>
                 <input type="hidden" value="" id="act2" name="Cact2"/>
                 <div class="modal-footer">
