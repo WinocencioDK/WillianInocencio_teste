@@ -1,12 +1,20 @@
-<?php include("_copy/cabecalho.php"); ?>
+<?php include("_copy/cabecalho.php");
+      include("conecta.php");
+      include("banco-corrida.php");
+ ?>
 
     <div class="container">
       <div class="principal">
         <h1>Motoristas</h1>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MotRegModal">
-            Registre um novo motorista
-          </button>
-
+        <?php
+          if(array_key_exists("adc",$_GET) && $_GET["adc"] == true) {
+        ?>
+            <div class="alert alert-success" role="alert">
+              Um novo motorista foi adicionado!
+            </div>
+          <?php
+            }
+          ?>
           <!-- Modal de Registro -->
           <div class="modal fade" id="MotRegModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -44,7 +52,7 @@
                         <div class="col-md-7 mb-3">
                           <label for="cpfMot">CPF</label>
                           <input type="number" maxlength="9" class="form-control" onkeyup="return TestaCPF();" id="cpfMot" name="CcpfMot" placeholder="CPF válido" required>
-                          <div class="invalid-feedback">
+                          <div id="Some" class="invalid-feedback">
                             Coloque um CPF valido.
                           </div>
                         </div>
@@ -91,6 +99,62 @@
             </div>
           </div>
           <!-- FInal Modal de Registro -->
+
+          <br/>
+          <br/>
+          <!-- Busca -->
+          <div class="row">
+            <div class="col-9">
+              <input class="form-control" type="text" placeholder="Busque..." id="myBusca">
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MotRegModal">Registre um novo motorista</button>
+            </div>
+          </div>
+          <!-- FInal Busca -->
+          <!-- Tabela -->
+          <br/>
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Nome </th>
+                <th>Data de Nascimento</th>
+                <th>Idade</th>
+                <th>Sexo</th>
+                <th>CPF</th>
+                <th>Modelo</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody id="myTable">
+              <?php
+                $motoristas = listaMotorista($conexao);
+                foreach ($motoristas as $motorista) {
+
+                  $data = date('d-m-Y',  strtotime($motorista['nasc_motorista']));
+                  $idade = transIdade($data);
+              ?>
+
+
+              <tr>
+                <td><?=$motorista['nm_motorista']?></td>
+                <td><?=$data?></td>
+                <td><?=$idade?></td>
+                <td><?=$motorista['sx_motorista']?></td>
+                <td><?=$motorista['cpf']?></td>
+                <td><?=substr($motorista['md_carro'], 0, 15)?></td>
+                <td class="sTa"><?=$motorista['st_motorista']?></td>
+                <td> <button type="button" class="bSt btn btn-sm">Secondary</button> </td>
+              </tr>
+
+              <?php
+                }
+              ?>
+
+            </tbody>
+          </table>
 
 
 
