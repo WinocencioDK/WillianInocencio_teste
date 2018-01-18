@@ -52,7 +52,7 @@
                       <div class="form-row">
                         <div class="col-md-7 mb-3">
                           <label for="cpfMot">CPF</label>
-                          <input type="number" maxlength="9" class="form-control" onkeyup="return TestaCPF();" id="cpfMot" name="CcpfPas" placeholder="CPF válido" required>
+                          <input type="text" maxlength="11" class="form-control" value="0" onkeyup="return TestaCPF();" id="cpfMot" name="CcpfPas" placeholder="CPF válido" required>
                           <div id="Some" class="invalid-feedback">
                             Coloque um CPF valido.
                           </div>

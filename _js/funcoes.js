@@ -13,13 +13,22 @@
   }, false);
 })();
 
+function LevaMot(id,status) {
+  if(status == true) {
+    $("#act0").html("Inativar");
+  } else {
+    $("#act0").html("Ativar");
+  }
+  $("#act1").val(id);
+  $("#act2").val(status);
+}
 
 function TestaCPF() {
     var Soma;
     var Resto;
     var strCPF = document.getElementById('cpfMot').value;
     Soma = 0;
-	if (strCPF == "00000000000" || strCPF.length = 11) { //DEPOOOOOOOOOOOOOOOOOOOOOOOOOIS
+	if (strCPF == "00000000000" || strCPF == "11111111111" || strCPF == "22222222222" || strCPF == "33333333333" || strCPF == "44444444444" || strCPF == "55555555555" || strCPF == "66666666666" || strCPF == "77777777777" || strCPF == "88888888888" || strCPF == "99999999999") { 
     $( "#Some" ).show();
     $('#cpfMot').addClass( "is-invalid" );
     return false;
@@ -49,23 +58,11 @@ function TestaCPF() {
 }
 
 $(document).ready(function() {
-  var sTatus = $('.sTa').html();
-  if(sTatus == true) {
-    $('.sTa').html("Ativo");
-    $('.sTa').addClass("text-primary");
-    $('.bSt').html("Inativar");
-    $('.bSt').addClass("btn-outline-secondary");
-  } else {
-    $('.sTa').html("Inativo");
-    $('.sTa').addClass("text-danger");
-    $('.bSt').html("Ativar");
-    $('.bSt').addClass("btn-outline-primary");
-  }
-
   $("#myBusca").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $("#myTable tr").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
+
 });

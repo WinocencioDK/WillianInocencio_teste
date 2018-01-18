@@ -5,6 +5,15 @@
     <div class="container">
       <div class="principal">
         <h1>Corridas</h1>
+        <?php
+          if(array_key_exists("adc",$_GET) && $_GET["adc"] == true) {
+        ?>
+            <div class="alert alert-success" role="alert">
+              Nova corrida adicionada!
+            </div>
+        <?php
+          }
+        ?>
 
         <!-- Modal de Registro -->
         <div class="modal fade" id="CorRegModal" tabindex="-1" role="dialog">
@@ -17,7 +26,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form id="needs-validation" onsubmit="return TestaCPF();" action="adc-cor.php" method="post"  novalidate>
+                <form id="needs-validation"  action="adc-corr.php" method="post"  novalidate>
 
                   <div class="form-row">
                     <div class="col-md-6">
@@ -66,8 +75,12 @@
                         <div class="input-group-prepend">
                           <div class="input-group-text">R$</div>
                         </div>
-                        <input type="text" class="form-control" id="VaCor" name="CVaCor" placeholder="00,00">
+                        <input type="number" class="form-control" id="VaCor" step=".01" name="CVaCor" placeholder="00,00" required>
+                        <div class="invalid-feedback">
+                          Coloque um valor.
+                        </div>
                       </div>
+
               </div>
 
               <div class="modal-footer">
@@ -81,28 +94,50 @@
       </div>
 
         <!-- FInal Modal de Registro -->
+        <br/>
+        <br/>
+        <!-- Busca -->
+        <div class="row">
+          <div class="col-9">
+            <input class="form-control" type="text" placeholder="Busque..." id="myBusca">
+          </div>
+          <div class="col-3">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CorRegModal">Registre um nova corrida</button>
+          </div>
+        </div>
+        <!-- FInal Busca -->
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CorRegModal">Registre um nova corrida</button>
 
-          <table class="table-bordered table-hover">
-            <thead>
-              <tr>
-                <th colspan="4">Motorista</th>
-                <th colspan="4">Passageiro</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td colspan="4">Nome do motorista</td>
-                <td colspan="4">Nome do Passageiro</td>
+        <br/>
 
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="8">R$00.00</td>
-              </tr>
-            </tfoot>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Id da Corrida</th>
+              <th>Nome do Motorista</th>
+              <th>Nome do Passageiro</th>
+              <th>Valor da Corrida</th>
+            </tr>
+          </thead>
+
+          <tbody id="myTable">
+            <?php
+              $corridas =  listaCorrida($conexao);
+              foreach ($corridas as $corrida) {
+
+            ?>
+            <tr>
+              <td><?=$corrida['id']?></td>
+              <td><?=$corrida['nm_motorista']?></td>
+              <td><?=$corrida['nm_passageiro']?></td>
+              <td>R$<?=$corrida['valor_corr']?></td>
+            </tr>
+
+          <?php
+            }
+          ?>
+
+          </tbody>
         </table>
 
 

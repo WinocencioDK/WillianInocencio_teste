@@ -32,6 +32,17 @@ function listaPassageiro($conexao) {
   }
     return $passageiros;
 }
+
+function listaCorrida($conexao) {
+  $query = "SELECT id,valor_corr, nm_motorista,nm_passageiro FROM tb_corrida INNER join tb_motorista on tb_corrida.id_motorista = tb_motorista.id_motorista INNER JOIN tb_passsageiro on tb_corrida.id_passageiro = tb_passsageiro.id_passageiro;";
+  $corridas = array();
+  $resultado = mysqli_query($conexao,$query);
+  while($corrida = mysqli_fetch_assoc($resultado)) {
+    array_push($corridas, $corrida);
+  }
+  return $corridas;
+}
+
 function transIdade($data) {
   $nasc = new DateTime($data);
   $hoje = new DateTime(date('d-m-Y'));
@@ -58,4 +69,9 @@ function listaNmsPas($conexao) {
     array_push($pasS,$nome);
   }
   return $pasS;
+}
+
+function alteraStatus($conexao,$id,$status) {
+  $query = "update tb_motorista set st_motorista = {$status} where id_motorista = {$id};";
+  mysqli_query($conexao,$query);
 }

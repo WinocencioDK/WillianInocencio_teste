@@ -51,7 +51,7 @@
                       <div class="form-row">
                         <div class="col-md-7 mb-3">
                           <label for="cpfMot">CPF</label>
-                          <input type="number" maxlength="9" class="form-control" onkeyup="return TestaCPF();" id="cpfMot" name="CcpfMot" placeholder="CPF válido" required>
+                          <input type="text" maxlength="11" class="form-control" onkeyup="return TestaCPF();" id="cpfMot" name="CcpfMot" placeholder="CPF válido" required>
                           <div id="Some" class="invalid-feedback">
                             Coloque um CPF valido.
                           </div>
@@ -145,8 +145,12 @@
                 <td><?=$motorista['sx_motorista']?></td>
                 <td><?=$motorista['cpf']?></td>
                 <td><?=substr($motorista['md_carro'], 0, 15)?></td>
-                <td class="sTa"><?=$motorista['st_motorista']?></td>
-                <td> <button type="button" class="bSt btn btn-sm">Secondary</button> </td>
+                <td><?php if($motorista['st_motorista'] == true) {
+                  echo "<span class='text-primary'>Ativo</span>" ;
+                }else {
+                  echo "<span class='text-danger'>Inativo</span";
+                }?></td>
+                <td> <button type="button" data-toggle="modal" data-target="#AlteraModal" onclick="LevaMot(<?=$motorista['id_motorista'] . "," .$motorista['st_motorista']?>)" class="btn btn-sm btn-outline-secondary">Alterar status</button> </td>
               </tr>
 
               <?php
@@ -155,7 +159,28 @@
 
             </tbody>
           </table>
+          <!-- Inicio do Modal de Inativo e Ativo -->
 
+          <div class="modal fade" id="AlteraModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Tem certeza que deseja <span id="act0"></span>?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form action="alt-sta.php" method="post">
+                <input type="hidden" value="" id="act1" name="Cact1"/>
+                <input type="hidden" value="" id="act2" name="Cact2"/>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                  <button type="submit" class="btn btn-primary">Sim</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
       </div>
