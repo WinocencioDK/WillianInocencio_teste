@@ -12,9 +12,9 @@
             <div class="alert alert-success" role="alert">
               Um novo motorista foi adicionado!
             </div>
-          <?php
-            }
-          ?>
+        <?php
+          }
+        ?>
           <!-- Modal de Registro -->
           <div class="modal fade" id="MotRegModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -26,7 +26,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                    <form id="needs-validation" onsubmit="return TestaCPF();" action="AdceAlt/adc-mot.php" method="post"  novalidate>
+                  <form id="needs-validation" onsubmit="return TestaCPF();" action="AdceAlt/adc-mot.php" method="post"  novalidate>
 
                       <div class="form-row">
                         <div class="col-md-7 mb-6">
@@ -70,8 +70,6 @@
                         </div>
                       </div>
 
-
-
                     <div class="form-row">
                       <div class="col-md-10 mb-6">
                         <label for="modCar">Modelo do Carro</label>
@@ -102,6 +100,7 @@
 
           <br/>
           <br/>
+
           <!-- Busca -->
           <div class="row">
             <div class="col-9">
@@ -112,6 +111,7 @@
             </div>
           </div>
           <!-- FInal Busca -->
+
           <!-- Tabela -->
           <br/>
           <table class="table table-bordered table-hover">
@@ -159,8 +159,9 @@
 
             </tbody>
           </table>
-          <!-- Inicio do Modal de Inativo e Ativo -->
+          <!-- FInal Tabela -->
 
+          <!-- Inicio do Modal de Inativo e Ativo -->
           <div class="modal fade" id="AlteraModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -181,7 +182,7 @@
               </div>
             </div>
           </div>
-
+          <!-- FInal Modal -->
 
       </div>
     </div>

@@ -27,7 +27,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                    <form id="needs-validation" onsubmit="return TestaCPF();" action="AdceAlt/adc-pas.php" method="post"  novalidate>
+                  <form id="needs-validation" onsubmit="return TestaCPF();" action="AdceAlt/adc-pas.php" method="post"  novalidate>
 
                       <div class="form-row">
                         <div class="col-md-7 mb-6">
@@ -85,6 +85,7 @@
 
           <br/>
           <br/>
+
           <!-- Busca -->
           <div class="row">
             <div class="col-9">
@@ -95,6 +96,7 @@
             </div>
           </div>
           <!-- FInal Busca -->
+
           <!-- Tabela -->
           <br/>
           <table class="table table-bordered table-hover">
@@ -130,8 +132,7 @@
 
             </tbody>
           </table>
-
-
+          <!-- FInal Tabela -->
 
       </div>
     </div>

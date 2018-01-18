@@ -9,9 +9,6 @@ if($_POST['Cact2'] == true) {
   $status = 1;
 }
 
-
-
-
 alteraStatus($conexao,$id,$status);
 
 header("Location: ../motorista.php");

@@ -1,6 +1,7 @@
 <?php include("_copy/cabecalho.php");
       include("banco/conecta.php");
-      include("banco/banco-corrida.php"); ?>
+      include("banco/banco-corrida.php");
+?>
 
     <div class="container">
       <div class="principal">
@@ -8,9 +9,9 @@
         <?php
           if(array_key_exists("adc",$_GET) && $_GET["adc"] == true) {
         ?>
-            <div class="alert alert-success" role="alert">
-              Nova corrida adicionada!
-            </div>
+          <div class="alert alert-success" role="alert">
+            Nova corrida adicionada!
+          </div>
         <?php
           }
         ?>
@@ -69,7 +70,7 @@
                       </div>
                     </div>
 
-                    </div>
+                  </div>
                       <label for="VaCor">  Valor da Corrida</label>
                       <div class="input-group">
                         <div class="input-group-prepend">
@@ -82,7 +83,6 @@
                       </div>
 
               </div>
-
               <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                   <button type="submit" class="btn btn-primary">Registrar</button>
@@ -90,12 +90,13 @@
               </div>
             </div>
 
+          </div>
         </div>
-      </div>
-
         <!-- FInal Modal de Registro -->
+
         <br/>
         <br/>
+
         <!-- Busca -->
         <div class="row">
           <div class="col-9">
@@ -107,9 +108,9 @@
         </div>
         <!-- FInal Busca -->
 
-
         <br/>
 
+        <!-- Inicio Tabela -->
         <table class="table table-bordered table-hover">
           <thead>
             <tr>
@@ -133,16 +134,15 @@
               <td>R$<?=$corrida['valor_corr']?></td>
             </tr>
 
-          <?php
-            }
-          ?>
+            <?php
+              }
+            ?>
 
           </tbody>
         </table>
-
+        <!-- FInal Tabela -->
 
       </div>
     </div>
-
 
 <?php include("_copy/rodape.php"); ?>
