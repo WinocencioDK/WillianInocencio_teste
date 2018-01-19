@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
 
-    <title>Index Teste</title>
+    <title>Teste</title>
     <link href="_css/bootstrap.min.css" rel="stylesheet">
     <link href="_css/estilo.css" rel="stylesheet">
 
@@ -21,7 +21,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <a class="nav-link" href="index.php">Pagina Inicial                
+            <a class="nav-link" href="index.php">Pagina Inicial
             </a>
             <li class="nav-item">
               <a class="nav-link" href="motorista.php">Motoristas</a>
